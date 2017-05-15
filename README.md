@@ -12,6 +12,12 @@ doit être lancée manuellement sur le serveur raspberry dans un répertoire que
 
 Librairie Insteon:  https://github.com/automategreen/home-controller#lighting-functions
 
+attention au port série usb
+
+ajuster la ligne 1 de matsteon.js en conséquence:
+
+```const PLM_PORT = "/dev/ttyUSB1"```
+
 
 ### Installation en service pour démarrage automatique au reboot
 
