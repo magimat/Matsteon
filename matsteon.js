@@ -56,7 +56,7 @@ app.get('/light/:id/status', function(req, res){
 });
 
 
-app.get('/garage/button', function(req, res){
+app.get('/garage/bouton', function(req, res){
   var io = plm.ioLinc(IOLINC_ID); 
   io.relayOn()
   .then(function (status) {
