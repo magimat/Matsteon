@@ -4,6 +4,12 @@
 
 Il manque la dépendance à SerialPort dans package.json, car impossible de l'installer sous raspberry ????? 
 
+La commande 
+```npm install serialport```
+
+doit être lancée manuellement sur le serveur raspberry dans un répertoire quelconque
+
+
 Librairie Insteon:  https://github.com/automategreen/home-controller#lighting-functions
 
 
