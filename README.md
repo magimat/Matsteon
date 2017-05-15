@@ -49,12 +49,12 @@ exit 0
 
 #### Rendre exécutable
 
-```chmod 755 /etc/init.d/matsteon```
+```sudo chmod 755 /etc/init.d/matsteon```
 
 
 #### Ajouter boot services
 
-```update-rc.d matsteon defaults```
+```sudo update-rc.d matsteon defaults```
 
 
 #### Supprimer du boot services
