@@ -1,5 +1,10 @@
 # Matsteon
 
+### Notes
+
+Il manque la dépendance à SerialPort dans package.json, car impossible de l'installer sous raspberry ????? 
+
+
 
 ### Installation en service pour démarrage automatique au reboot
 
