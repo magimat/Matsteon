@@ -1,7 +1,17 @@
 # Matsteon
 
 
-/etc/init.d/matsteon 
+### Installation en service pour démarrage automatique au reboot
+
+
+#### Install forever
+
+```sudo -i npm install forever -g```
+
+
+#### Créer fichier service
+
+sudo nano /etc/init.d/matsteon 
 
 ```
 #!/bin/sh
@@ -23,3 +33,21 @@ exit 1
 esac
 exit 0
 ```
+
+
+#### Rendre exécutable
+
+```chmod 755 /etc/init.d/matsteon```
+
+
+#### Ajouter boot services
+
+```update-rc.d matsteon defaults```
+
+
+#### Supprimer du boot services
+
+```update-rc.d matsteon remove```
+
+
+
