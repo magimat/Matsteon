@@ -61,5 +61,9 @@ exit 0
 
 ```update-rc.d matsteon remove```
 
+### start / stop
 
+```sudo service matsteon start```
+
+```sudo service matsteon stop```
 
