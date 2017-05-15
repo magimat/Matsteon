@@ -7,7 +7,6 @@ var express = require('express');
 
 var app = express();
 
-
 var plm = new Insteon();
 plm.serial(PLM_PORT, function () {
   app.listen(API_PORT);
