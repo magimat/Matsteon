@@ -4,7 +4,7 @@
   "description": "Mat insteon controller",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon server.js"
+    "start": "nodemon matsteon.js"
   },
   "author": "Mathieu Girard",
   "license": "ISC",
