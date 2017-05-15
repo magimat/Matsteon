@@ -4,6 +4,7 @@
 
 Il manque la dépendance à SerialPort dans package.json, car impossible de l'installer sous raspberry ????? 
 
+Librairie Insteon:  https://github.com/automategreen/home-controller#lighting-functions
 
 
 ### Installation en service pour démarrage automatique au reboot
