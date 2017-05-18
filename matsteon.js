@@ -3,7 +3,7 @@ const LIGHT_CABANON_ID = "1B3F94"
 const LIGHT_CUISINE_ID = "1864C0"
 const LIGHT_MAISON_ID = "1A21DF"
 
-const PLM_PORT = "/dev/ttyUSB0"
+const PLM_PORT = "/dev/ttyUSB1"
 
 const API_PORT = 3000
 
@@ -133,7 +133,7 @@ function garageOpen() {
 
 // link devide as controller and as responder
 
-//plm.link('22D4EC', function(error, link) {});
-//plm.link('22D4EC', {controller: true}, function(error, link) {});
+//plm.link('1864C0', function(error, link) {});
+//plm.link('1864C0', {controller: true}, function(error, link) {});
 
 
