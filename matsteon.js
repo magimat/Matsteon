@@ -1,5 +1,10 @@
-const IOLINC_ID = "22.D4.EC"
-const PLM_PORT = "/dev/ttyUSB1"
+const IOLINC_ID = "22D4EC"
+const LIGHT_CABANON_ID = "1B3F94"
+const LIGHT_CUISINE_ID = "1864C0"
+const LIGHT_MAISON_ID = "1A21DF"
+
+const PLM_PORT = "/dev/tty.usbserial-A600B6WO"
+
 const API_PORT = 3000
 
 var Insteon = require('home-controller').Insteon;
@@ -83,5 +88,52 @@ app.get('/garage/status', function(req, res){
     res.send(((status.sensor == 'off') ? 'ouvert' : 'fermé'));
   });
 });
+
+
+
+addLightEventsListeners(plm.light(LIGHT_CUISINE_ID))
+addLightEventsListeners(plm.light(LIGHT_MAISON_ID))
+addLightEventsListeners(plm.light(LIGHT_CABANON_ID))
+
+function addLightEventsListeners(light) {
+  light.on('turnOn', function () {lightOn(light.id)});
+  light.on('turnOnFast', function () {lightOn(light.id)});
+  light.on('brightened', function () {lightOn(light.id)});
+  light.on('turnOff', function () {lightOff(light.id)});
+  light.on('turnOffFast', function () {lightOff(light.id)});
+  light.on('dimmed', function () {lightOff(light.id)});
+}
+
+plm.ioLinc(IOLINC_ID).on('sensorOn', function () {garageClosed()});
+plm.ioLinc(IOLINC_ID).on('sensorOff', function () {garageOpen()});
+
+
+
+function lightOn(id) {
+  console.log(id + ' is on')
+}
+
+function lightOff(id) {
+  console.log(id + ' is off')
+}
+
+function garageClosed() {
+  console.log('porte garage fermée')
+}
+
+function garageOpen() {
+  console.log('porte garage ouverte')
+}
+
+
+
+
+
+
+
+// link devide as controller and as responder
+
+//plm.link('22D4EC', function(error, link) {});
+//plm.link('22D4EC', {controller: true}, function(error, link) {});
 
 
