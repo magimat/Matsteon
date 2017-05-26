@@ -9,6 +9,9 @@ const API_PORT = 3000
 
 var Insteon = require('home-controller').Insteon;
 var express = require('express');
+var mqtt = require('mqtt')
+var clientMQTT  = mqtt.connect('mqtt://localhost')
+ 
 
 var app = express();
 
@@ -24,6 +27,7 @@ app.get('/light/:id/on', function(req, res){
     if(status.response) {
       res.sendStatus(200);
     } else {
+      console.log(status)
       res.sendStatus(404);
     }
   });
@@ -110,18 +114,22 @@ plm.ioLinc(IOLINC_ID).on('sensorOff', function () {garageOpen()});
 
 
 function lightOn(id) {
+  clientMQTT.publish('smartthings/' + id.match(/.{1,2}/g).join(".") + '/switch', 'on')
   console.log(id + ' is on')
 }
 
 function lightOff(id) {
+  clientMQTT.publish('smartthings/' + id.match(/.{1,2}/g).join(".") + '/switch', 'off')
   console.log(id + ' is off')
 }
 
 function garageClosed() {
+  clientMQTT.publish('smartthings/garage/switch', 'off')
   console.log('porte garage fermée')
 }
 
 function garageOpen() {
+  clientMQTT.publish('smartthings/garage/switch', 'on')
   console.log('porte garage ouverte')
 }
 
