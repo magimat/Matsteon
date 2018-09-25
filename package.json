@@ -13,7 +13,7 @@
   },
   "dependencies": {
     "express": "^4.15.2",
-    "home-controller": "^0.7.0",
+    "home-controller": "^0.8.2",
     "mqtt": "^2.7.2"
   }
 }
