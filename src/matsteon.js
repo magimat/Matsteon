@@ -3,7 +3,7 @@ const LIGHT_CABANON_ID = "1B3F94"
 const LIGHT_CUISINE_ID = "1864C0"
 const LIGHT_MAISON_ID = "1A21DF"
 
-const PLM_PORT = "/dev/ttyUSB0"
+const PLM_PORT = "/dev/insteonPLM"
 
 const API_PORT = 3000
 
