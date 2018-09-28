@@ -1,7 +1,7 @@
 # Matsteon
 
 
-##build docker image
+## build docker image
 
 ```		
 cd ~
@@ -11,7 +11,7 @@ docker build -t magimat/matsteon .
 docker push magimat/matsteon
 ```
 
-##run docker 
+## run docker 
 
 ```
 docker run -p 3000:80 --name matsteon --device=/dev/insteonPLM -d --restart unless-stopped magimat/matsteon
