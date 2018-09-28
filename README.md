@@ -1,23 +1,23 @@
 # Matsteon
 
 
-### port série
+##build docker image
 
-attention au port série usb
+```		
+cd ~
+git clone git@github.com:magimat/Matsteon.git
+cd Matsteon
+docker build -t magimat/matsteon .
+docker push magimat/matsteon
+```
 
-ajuster la ligne 1 de matsteon.js en conséquence:
+##run docker 
 
-```const PLM_PORT = "/dev/ttyUSB1"```
+```
+docker run -p 3000:80 --name matsteon --device=/dev/insteonPLM -d --restart unless-stopped magimat/matsteon
+```
 
 
-### Notes
-
-Il manque la dépendance à SerialPort dans package.json, car impossible de l'installer sous raspberry ????? 
-
-La commande 
-```npm install serialport```
-
-doit être lancée manuellement sur le serveur raspberry dans un répertoire quelconque
 
 
 Librairie Insteon:  https://github.com/automategreen/home-controller#lighting-functions
@@ -25,7 +25,7 @@ Librairie Insteon:  https://github.com/automategreen/home-controller#lighting-fu
 
 
 
-### Installation en service pour démarrage automatique au reboot
+### Installation en service pour démarrage automatique au reboot . (DEPRECATED, use docker instead)
 
 
 #### Install forever
