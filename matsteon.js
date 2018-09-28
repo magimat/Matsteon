@@ -5,7 +5,10 @@ const LIGHT_MAISON_ID = "1A21DF"
 
 const PLM_PORT = "/dev/insteonPLM"
 
-const API_PORT = 3000
+const API_PORT = 80 
+
+
+console.log('init');
 
 var Insteon = require('home-controller').Insteon;
 var express = require('express');
@@ -17,6 +20,9 @@ var app = express();
 
 var plm = new Insteon();
 plm.serial(PLM_PORT, function () {
+
+console.log('plm connected');
+
   app.listen(API_PORT);
 });
 
