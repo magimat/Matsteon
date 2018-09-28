@@ -24,8 +24,15 @@ Librairie Insteon:  https://github.com/automategreen/home-controller#lighting-fu
 
 
 
+***
 
-### Installation en service pour démarrage automatique au reboot . (DEPRECATED, use docker instead)
+
+
+
+
+## (DEPRECATED, use docker instead)
+
+### Installation en service pour démarrage automatique au reboot . 
 
 
 #### Install forever
