@@ -13,7 +13,11 @@ console.log('init');
 var Insteon = require('home-controller').Insteon;
 var express = require('express');
 var mqtt = require('mqtt')
-var clientMQTT  = mqtt.connect('mqtt://localhost')
+
+hostIp = require('child_process').execSync("ip route show | awk '/default/ {print $3}'").toString('utf8');
+
+
+var clientMQTT  = mqtt.connect('mqtt://' + hostIp)
  
 
 var app = express();
@@ -22,7 +26,6 @@ var plm = new Insteon();
 plm.serial(PLM_PORT, function () {
 
 console.log('plm connected');
-
   app.listen(API_PORT);
 });
 
