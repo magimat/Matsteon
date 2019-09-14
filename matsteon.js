@@ -2,10 +2,12 @@ const IOLINC_ID = "22D4EC"
 const LIGHT_CABANON_ID = "1B3F94"
 const LIGHT_CUISINE_ID = "1864C0"
 const LIGHT_MAISON_ID = "1A21DF"
+const LIGHT_PISCINE_ID = "2E5228"
+const LIGHT_CABANON_PISCINE_ID = "2E5C21"
 
 const PLM_PORT = "/dev/insteonPLM"
 
-const API_PORT = 80 
+const API_PORT = 3000
 
 
 console.log('init');
@@ -144,7 +146,11 @@ function garageOpen() {
 
 
 
-
+app.get('/init/:id', function(req, res){
+  plm.link(req.params.id, function(error, link) {
+    res.sends('link ok');
+  });
+});
 
 
 

@@ -14,7 +14,7 @@ docker push magimat/matsteon
 ## run docker 
 
 ```
-docker run -p 3000:80 --name matsteon --device=/dev/insteonPLM -d --restart unless-stopped magimat/matsteon
+docker run -p 3000:3000 --name matsteon --device=/dev/insteonPLM -d --restart unless-stopped magimat/matsteon
 ```
 
 
