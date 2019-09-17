@@ -148,10 +148,16 @@ function garageOpen() {
 
 app.get('/init/:id', function(req, res){
   plm.link(req.params.id, function(error, link) {
-    res.sends('link ok');
+    res.send('link ok');
   });
 });
 
+
+app.get('/init2/:id', function(req, res){
+  plm.link(req.params.id, {controller: true}, function(error, link) {
+    res.send('link2 ok');
+  });
+});
 
 
 // link devide as controller and as responder
